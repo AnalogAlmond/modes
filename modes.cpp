@@ -4,7 +4,7 @@
 using namespace std;
 
 int main(){
-    string key = "c";
+    string key = "c";//todo: add other keys
     string mode[] = {"ionian", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "locrian"};
 
     srand(time(0));//takes the current time as a seed
