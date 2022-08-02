@@ -13,7 +13,7 @@ int main(){
     string mode[] = {"ionian", "dorian", "phrygian", "lydian", "mixolydian", "aeolian", "locrian"};
     int used[MODES];
     string usedcombos[COMBINATIONS];
-    string command;
+//    string command;
     string key;
     int scales;
 
@@ -21,7 +21,7 @@ int main(){
     int r = rand()%7;//generates a random number between 0 and 6
     int rkey = rand()%12;//between 0 and 11
     
-    system("mocp --server");
+//    system("mocp --server");
     userInput(key);
     
     //if the user only wants one key:
@@ -29,8 +29,8 @@ int main(){
         for(int i = 0; i < MODES; i++){
             used[i] = r;
             cout << mode[r] << '\n';
-            command = "mocp --enqueue tracks/" + key + '/' + mode[r] + ".mp3";//command to get the file into the queue
-            system(command.c_str());//turns it into a constant char* and runs the command
+//            command = "mocp --enqueue tracks/" + key + '/' + mode[r] + ".mp3";//command to get the file into the queue
+//            system(command.c_str());//turns it into a constant char* and runs the command
             if(i == 6) break;
             while(find(begin(used), end(used), r)!=end(used)){
                 r = rand()%7;
@@ -45,8 +45,8 @@ int main(){
         for(int i = 0; i < scales; i++){
            usedcombos[i]=keys[rkey] + "/" + mode[r];
            cout << usedcombos[i] << '\n';
-           command = "mocp --enqueue tracks/" + usedcombos[i] + ".mp3";//command to get the file into the queue
-           system(command.c_str());//turns it into a constant char* and runs the command
+//           command = "mocp --enqueue tracks/" + usedcombos[i] + ".mp3";//command to get the file into the queue
+//           system(command.c_str());//turns it into a constant char* and runs the command
            if(i == (scales-1)) break;
            while(find(begin(usedcombos), end(usedcombos), keys[rkey] + "/" + mode[r])!=end(usedcombos)){
                 r = rand()%7;
@@ -58,7 +58,7 @@ int main(){
         return 1;
     }
     
-    system("mocp --play");//starts the playlist
+//    system("mocp --play");//starts the playlist
     return 0;
 }
 
